@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'scala'
+    id 'idea'
+}
+
+group 'collaborative-filtering-sample'
+
+version '0.1'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.4'
+    compile group: 'org.scalactic', name: 'scalactic_2.11', version: '3.0.0'
+    //Spark Dependencies
+    compile 'org.apache.spark:spark-sql_2.11:2.0.0'
+    compile 'org.apache.spark:spark-core_2.11:2.0.0'
+    compile 'org.apache.spark:spark-mllib_2.11:2.0.0'
+    compile 'com.databricks:spark-csv_2.11:1.5.0'
+    // Misc
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.9'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.1.9'
+    compile group: 'org.jooq', name: 'jool', version: '0.9.11'
+    compile 'com.google.guava:guava:19.0'
+    //test dependencies
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.0.53-beta'
+    testCompile group: 'com.github.javafaker', name: 'javafaker', version: '0.12'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
